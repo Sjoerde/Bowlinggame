@@ -22,7 +22,9 @@ namespace Bowlinggame
             }
         }
 
-        // Frame is finished after two rolls or a strike.
+        /// <summary>
+        /// Frame is finished after two rolls or a strike.
+        /// </summary>
         public bool IsFinished
         {
             get
@@ -47,6 +49,9 @@ namespace Bowlinggame
             }
         }
 
+        /// <summary>
+        /// Roll a number of pins on this frame. Only 2 rolls are allowed, except when it is a strike, then only 1 roll is allowed.
+        /// </summary>
         public void Roll(int pins)
         {
             if (IsFinished)
@@ -70,6 +75,9 @@ namespace Bowlinggame
             }
         }
 
+        /// <summary>
+        /// Returns the score of this frame, including the extra points for having thrown a spare or a strike.
+        /// </summary>
         public int Score()
         {
             int score = Throw1 + Throw2;

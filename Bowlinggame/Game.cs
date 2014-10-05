@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bowlinggame
 {
+    /// <summary>
+    /// A bowling game.
+    /// </summary>
     public class Game
     {
         public IList<Frame> Frames
@@ -19,6 +22,9 @@ namespace Bowlinggame
             Frames = new List<Frame>();
         }
 
+        /// <summary>
+        /// Roll a number of pins and add them at the correct location in the game.
+        /// </summary>
         public void Roll(int pins)
         {
             if (Frames.Count == 0 || Frames.Last().IsFinished)
@@ -37,6 +43,9 @@ namespace Bowlinggame
             Frames.Last().Roll(pins);
         }
 
+        /// <summary>
+        /// Returns the total score of the game.
+        /// </summary>
         public int Score()
         {
             return Frames.Take(10).Sum(f => f.Score());
